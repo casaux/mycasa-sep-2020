@@ -1,2 +1,2 @@
-# mycasa-nov-2019-v3
-For demo purposes only
+# drone-registration
+Drone registration with updated copy
