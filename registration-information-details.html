@@ -5,18 +5,19 @@
       <title>myCASA</title>
       <meta name="viewport" content="width=device-width">
       <meta name="viewport" content="initial-scale=1">
-      <link rel="stylesheet" href="../mycasa-src/css/furnace.min.css">
-      <link rel="stylesheet" href="../mycasa-src/css/casa.css">
-	   
-	   <style>
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/designsystem.min.css">
+      <link rel="stylesheet" href="../mycasa-src-3.0/css/casa.css">
+       
+       	   <style>
 	   
 		   .casa-drone-instructions{display: none;}
 		   .casa-drone-instructions strong{font-weight:600;color:#000;}
 	   </style>
-	   
-      <script type="text/javascript" src="../mycasa-src/js/furnace.min.js"></script>
-      <script type="text/javascript" src="../mycasa-src/js/jquery.min.js"></script>
-      <script type="text/javascript" src="../mycasa-src/js/jquery.js"></script>
+       
+      <script type="text/javascript" src="../mycasa-src-3.0/js/designsystem.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.min.js"></script>
+      <script type="text/javascript" src="../mycasa-src-3.0/js/jquery.js"></script>
+	  <script type="text/javascript" src="va.js"></script>
       <script type="text/javascript">
          /* page specific js */
          
@@ -158,8 +159,7 @@
          
       </script>
    </head>
-   <body class="live-demo au-body au-grid">
-
+     <body class="live-demo au-body au-grid">
       <main class="au-grid">
          <div class="header">
             <div class="container">
@@ -168,7 +168,7 @@
                      <a href="index.html"><img src="../mycasa-src/img/CASALOGO-white-i.svg"></a>
                   </div>
                   <div class="casa-menu">
-                  
+
                   	<div id="dropdown-menu">
 						<div id="dd-menu"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/menu.png" height="20" />Menu</a></div>
 						<div id="dd-close"><a class="au-btn au-btn--dark menu" href="#"><img src="../mycasa-src/img/close.png" height="20" />Close</a><br />
@@ -177,8 +177,8 @@
 						<p><a href="#">Switch profile</a></p>
 						<p><a href="mycasa-signed-out.html">Sign out</a></p>
 						</div>
-                  
-                  
+
+
                   </div>
                </div></div>
             </div>
@@ -194,31 +194,31 @@
 			</div>
 		</div>
          <div class="container">
-			 <div class="row">
-			 			  <div class="col-lg-6 col-md-6 col-xs-12">
-			
                <nav class="au-breadcrumbs" aria-label="breadcrumb">
                   <ul class="au-link-list au-link-list--inline">
-                     <li><a href="dashboard-bob.html">myCASA</a></li>
+                     <li><a href="dashboard-org.html">myCASA</a></li>
                      <li>Drone registration</li>
                   </ul>
                </nav>
+             			  <div class="casa-section">
                <header class="au-header" role="banner">
-                  <h1 class="break desktop au-header-heading">Drone registration </h1>
-                  <a class="au-direction-link au-direction-link--left" href="registration-information-please-add.html">Back</a>
+                  <h1 class="break desktop au-header-heading">Drone registration</h1>
+                  <a class="au-direction-link" href="javascript:history.back()">
+					<span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back
+					</a>
                </header>
+			 </div>
+             
+        <div class="row">
+               	<div class="col-xs-12 col-md-12 col-lg-6">
 			 
 
 		
 <h2>Drone details</h2>
-							  <br>
 
-			 
-			 <label for="manufacturer" class="casa-label-guidance">Manufacturer</label>
-							  
-			<p class="casa-form-guidance">
-			Please select your drone manufacturer
-			</p>
+			 <div class="au-form-group">
+            <label class="au-label" for="manufacturer">Manufacturer</label>
+				<span class="au-hint-text">Please select your drone manufacturer</span>			  
 							  
 								<select id="manufacturer" class="au-select au-select--block">
 								<option value="1">Please select manufacturer</option>						
@@ -228,17 +228,12 @@
   <option value="6">Other manufacturer</option>	
   <option value="5">Home built</option>
 								</select>
-			
-			 <br><br>
+                    </div>
 			 
 				 	<div class="default-values">
-				<label for="model-name-version" class="casa-label-guidance">Model name</label>
-					
-					
-					<p class="casa-form-guidance">
-			Please select your drone model name and version
-			</p>
-					
+                    <div class="au-form-group">
+                        <label class="au-label" for="model-name-version">Model name</label>
+					<span class="au-hint-text">Please select your drone model name and version</span>
 					
 				<input class="au-text-input au-text-input--block" name="text-input-block2" id="text-input-block2" type="text" value="">
 					
@@ -319,7 +314,8 @@
 					
 						
 						
-					</select>	
+					</select>
+                        </div>    
 				</div>
 					
 					
@@ -329,36 +325,27 @@
 							  </div>	
 							  
 			 	<div id="other-manufacturer" style="display:none;">
-			 	<label class="casa-label-guidance" for="other-manufacturer">Manufacturer name</label>
-						
-				<p class="casa-form-guidance">
-				Please enter the name of your drone manufacturer
-				</p>
-					
+                <div class="au-form-group">
+                <label class="au-label" for="other-manufacturer">Manufacturer name</label>
+				<span class="au-hint-text">Please enter the name of your drone manufacturer</span>	    
 				<input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text" value="">
-			 
-			 	<br>
+                </div>
 			 	</div>
 			 
 			<div id="other-model-free" style="display: none;">
-			<label for="other-model-free-text" class="casa-label-guidance">Model name</label>
-			<p class="casa-form-guidance">
-			Please enter your drone model name and version
-			</p>				
+            <div class="au-form-group">
+                <label class="au-label" for="other-model-free-text">Model name</label>
+				<span class="au-hint-text">Please enter your drone model name and version</span>	    	
 			<input class="au-text-input au-text-input--block" name="text-input-block-other" id="text-input-block-other" type="text" value="">
-			<br>	
+                </div>	
 			</div>				  
 							  
 			 
 			 	<div id="home-build" style="display:none;">
-			 			<div class="form-section">						
-								<label for="category" class="casa-label-guidance">Drone category</label>
-							
-							
-							<p class="casa-form-guidance">
-			Please select your drone category/type.  <a href="casa-drone-types.html" target="_blank">What are these?</a>
-			</p>
-							
+                    <div class="au-form-group">
+                <label class="au-label" for="category">Drone category</label>
+				<span class="au-hint-text">Please select your drone category/type.  <a href="casa-drone-types.html" target="_blank">What are these?</a></span>
+
 								<select id="category" class="au-select au-select--block">
 									<option value="1">Please select</option>
 									<option value="2">Aeroplane</option>
@@ -368,33 +355,23 @@
 									<option value="6">Powered Lift</option>
 								</select>
 							</div>
-			 				<br>
-			 				
-			 				
-			 					<label class="casa-label-guidance" for="text-input-block1">Drone weight (grams)</label>
-					
-					<p class="casa-form-guidance">
-			Please enter your drone weight in grams. The weight of your drone includes fuel, accessories or attachments such as cameras or gimbals.
-			</p>
-					
+<div class="au-form-group">
+                <label class="au-label" for="text-input-block1">Drone weight (grams)</label>
+				<span class="au-hint-text">Please enter your drone weight in grams. The weight of your drone includes fuel, accessories or attachments such as cameras or gimbals.</span>	
 				<input class="au-text-input au-text-input--block" name="text-input-block1" id="text-input-block1" type="text" value="">
-			 					 			 <br>		
+
 				 </div>
+                    </div>
 			 
 			 
 
 
-			 
-				<label for="text-input-block3" class="casa-label-guidance">Serial number</label>
-					
-					<p class="casa-form-guidance">
-			Please enter your drone serial number. <a href="casa-drone-serial-numbers.html" target="_blank">How do I find this?</a> 
-						
-							  </p>
-							  
+			 <div class="au-form-group">
+                <label class="au-label" for="text-input-block3">Serial number</label>
+				<span class="au-hint-text">Please enter your drone serial number. <a href="casa-drone-serial-numbers.html" target="_blank">How do I find this?</a></span>
+											  
 							  <input class="au-text-input au-text-input--block" name="text-input-block3" id="text-input-block3" type="text" value="">
 							  
-							  <br />
 							  			  
 					<div class="casa-form-guidance casa-drone-instructions" id="dji-1"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
 					  <div class="casa-form-guidance casa-drone-instructions" id="dji-2"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>	 
@@ -419,87 +396,61 @@
 							   <div class="casa-form-guidance casa-drone-instructions" id="dji-12"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
 							  
 							   <div class="casa-form-guidance casa-drone-instructions" id="dji-13"><strong>How do I find my serial number?</strong><br />The serial number for your drone can be found lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum enim et augue placerat pellentesque. Nulla facilisi. Integer quis dui nunc. Nulla facilisi. Donec egestas ornare lacinia.</div>
-					
+                    </div>
 				
 							  
 							  
-							  
-							  
-					<br>
-													<label class="au-control-input">
+
+                <div class="au-form-group">
+                 <label class="au-control-input">
 				  <input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="no-serial">
 				  <span class="au-control-input__text">No serial number available</span>
 				</label>
-				
-						
-				
-							  
-							  
-							  
-							  
-							  
-							  
-							  
-							  
-							  
-							  
+                 </div>
+	  
 					<div id="no-serial-callout" style="display:none;">
-					
-					<br />
-					<p class="au-callout">
-					If your drone doesn't have a serial number or you can't find it, CASA will generate a registration number for you. You will receive the number after your registration is complete. You must affix this number to your drone.</abbr>
-					</p>
-					
-					
+                    <div class="au-form-group">		  
+					<div class="au-callout">
+					If your drone doesn't have a serial number or you can't find it, CASA will generate a registration number for you. You will receive the number after your registration is complete. You must affix this number to your drone.
+					</div>	
 					</div>
-					
-					
-							  
-							  <br /> <br />
+                    </div>
 
-			    <div class="au-callout">
+			 <div class="au-form-group">   
+             <div class="au-callout">
                      
                         <p>If your drone weighs more than 150kg you are required to register it as a <a href="#">VH Registered Aircraft</a>.</p>
                       
 					
                </div>
+             </div>
 
+                    <div class="au-form-group">     
+                    <fieldset class="au-fieldset">
+                        <legend class="au-fieldset__legend">
+                            <h3 class="au-display-sm">Is this drone currently registered in another country?</h3>
+                        </legend>
 
+                        <div class="au-control-input au-control-input--block">
+                            <input class="au-control-input__input" type="radio" name="radio-ex-1" id="pct-radio-block" value="">
+                            <input class="au-control-input__input" type="radio" name="radio-ex1">
+                                <label class="au-control-input__text">Yes</label>
+                        </div>
+                        
+                        <div class="au-control-input au-control-input--block">
+                            <input class="au-control-input__input" type="radio" name="radio-ex1" checked>
+                                <label class="au-control-input__text">No</label>
+                        </div>
+                        
+                    </fieldset>
+                    </div> 
 					
-					
-					 <br /><br />
-					
-<p class="casa-form-descriptor">Is this drone currently registered in another country?</p>
-							
-				<br>
-				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="radio-ex1">
-				  <span class="au-control-input__text">Yes</span>
-				</label>
-				<br>
-			 <br>
-				<label class="au-control-input">
-				  <input class="au-control-input__input" type="radio" name="radio-ex1" checked>
-				  <span class="au-control-input__text" >No</span>
-				</label>
-
-			 
-			 
-
-			 
-			 <br><br><br>
+   				      <div class="au-form-group">
+   				           <a class="au-btn" href="registration-information-single.html">Save drone</a>
+	              </div>
 				   
 				<div class="form-navigation">
 
-				<a class="au-btn" href="registration-information-single.html">Save drone</a>
-					
-
-
-
-
-					
-
-				</div>
 				               <hr />
             <a href="arn-saved.html" class="au-btn au-btn--secondary">
             Save and exit application
@@ -512,7 +463,7 @@
 
 
           <div class="footer">
-           
+
             <div class="footer-wrapper">
                <iframe src="../mycasa-src/footer.html" frameborder="0" border="0" scrolling="no"></iframe>
             </div>
