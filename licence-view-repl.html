@@ -16,8 +16,22 @@
          $(document).ready(function() {
 
            $("#apple").bind("click",function(){
-               $("#wallet").css("display","block");
+               $("#loading").css("display","block");
+
+               setInterval(function(){
+                 $("#loading").css("display","none");
+                 $("#wallet").css("display","block");
+               }, 5000);
+
+
+
+                //
+
            });
+
+
+
+
 
             $("#wallet").bind("click",function(){
                 $(this).css("display","none");
@@ -27,8 +41,20 @@
       </script>
       <style type="text/css">
          /* page specific css */
-         #wallet{position:absolute;top:0;left:0;z-index:99999;display:none;}
+         #wallet{position:absolute;top:0;left:0;z-index:99999;display:none;bottom:0;right:0;background:#fff;}
+         #loading{background:rgba(0,0,0,0.2);position:absolute;top:0;left:0;z-index:99999;display:none;right:0;bottom:0}
+         #loading p{font-size:1.3rem;line-height:1.5rem;padding:1rem !important;background:#5c5c5c;color:#fff;font-weight:bold;width:250px;display:block; border-radius: 5px;text-align:center;margin:300px auto auto auto !important;}
 
+         #loading img{animation: rotation 2s infinite linear;}
+
+         @keyframes rotation {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(359deg);
+            }
+          }
 
       </style>
    </head>
@@ -45,6 +71,10 @@
          </div>
          <div class="body">
 
+<div id="loading">
+<p>Loading licence.<br /> Please wait...<br />
+  <img src="loader.png">
+</div>
 <div id="wallet"><img src="apple.png"></div>
 
 			<div class="banner">
@@ -74,11 +104,13 @@
                </header>
 
                <div class="au-form-group">
+
+                         </div>
+               <div class="au-form-group">
                    <div style="padding-bottom: 1.5rem">
-                   <p style="float: right" align="right"><a href="repl.pdf" target="_blank">Download licence</a> (<abbr title="Portable document format">PDF</abbr> 700kb)</p>
+                   <p style="float: right" align="right"><a href="repl.pdf" target="_blank">Download licence</a></p>
                    </div>
                          </div>
-
                <div class="au-form-group casa-mobile-only">
 
 <div id="apple"><a href="#"><img src="Add_to_Apple_Wallet_rgb_US-UK.svg"></a><br></div>
